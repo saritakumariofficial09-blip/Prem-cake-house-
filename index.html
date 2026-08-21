@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>प्रेम केक हाउस | Prem Cake House</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">प्रेम केक हाउस</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#order">My Order</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section id="home" class="hero-content">
+      <div>
+        <p class="eyebrow">Fresh • Tasty • Local</p>
+        <h1>Fresh Cakes, Pastries<br>& More</h1>
+        <p class="hindi">हर खास मौके को बनाएं और भी खास हमारे स्वादिष्ट केक और बेकरी आइटम के साथ।</p>
+        <a class="button light" href="#products">Book Your Order</a>
+      </div>
+      <div class="hero-cake" aria-label="Cake illustration">🎂</div>
+    </section>
+  </header>
+
+  <main>
+    <section id="products" class="section">
+      <div class="section-heading">
+        <h2>Our Products</h2>
+        <p>अपनी पसंद का प्रोडक्ट चुनें और आसानी से ऑर्डर करें।</p>
+      </div>
+
+      <div class="category-grid">
+        <button class="category active" data-category="cakes">🎂<strong>Cakes</strong><span>केक हर मौके के लिए</span></button>
+        <button class="category" data-category="pastries">🍰<strong>Pastries</strong><span>स्वाद और खुशी का मेल</span></button>
+        <button class="category" data-category="cupcakes">🧁<strong>Cup Cakes</strong><span>छोटे केक, बड़ी खुशियाँ</span></button>
+        <button class="category" data-category="items">🎈<strong>Cake Items</strong><span>Balloon, Cap, Candle आदि</span></button>
+      </div>
+
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <section id="order" class="section order-section">
+      <div class="section-heading">
+        <h2>Book Your Order</h2>
+        <p>अपना ऑर्डर देखें और pickup या delivery चुनें।</p>
+      </div>
+
+      <div class="order-layout">
+        <div id="cart" class="card">
+          <h3>Your Order</h3>
+          <div id="cart-items"><p class="empty">अभी कोई item नहीं चुना गया है।</p></div>
+          <div class="total"><span>Total</span><strong id="cart-total">₹0</strong></div>
+        </div>
+
+        <form id="order-form" class="card">
+          <h3>Customer Details</h3>
+
+          <label>Name
+            <input id="customer-name" required placeholder="अपना नाम लिखें">
+          </label>
+
+          <label>Phone Number
+            <input id="customer-phone" required type="tel" placeholder="मोबाइल नंबर">
+          </label>
+
+          <label>Receive Your Order
+            <select id="delivery-type">
+              <option value="pickup">Shop Pickup — FREE</option>
+              <option value="delivery">Home Delivery — Charge may apply</option>
+            </select>
+          </label>
+
+          <label id="address-wrap" class="hidden">Delivery Address
+            <textarea id="address" rows="3" placeholder="घर/गांव का पता लिखें"></textarea>
+          </label>
+
+          <label>Payment
+            <select id="payment">
+              <option value="upi">UPI Payment</option>
+              <option value="cash">Cash on Pickup</option>
+            </select>
+          </label>
+
+          <label>Cake Message <span class="optional">(optional)</span>
+            <input id="cake-message" placeholder="Example: Happy Birthday Rahul">
+          </label>
+
+          <button class="button full" type="submit">Confirm Order</button>
+          <p class="small">अभी यह demo order confirmation दिखाता है। बाद में इसे bakery के WhatsApp/real payment से जोड़ा जा सकता है।</p>
+        </form>
+      </div>
+
+      <div id="confirmation" class="confirmation hidden"></div>
+    </section>
+
+    <section id="contact" class="info-strip">
+      <div><strong>🛵 Delivery Available</strong><span>डिलीवरी चार्ज लागू हो सकता है</span></div>
+      <div><strong>🏪 Shop Pickup — FREE</strong><span>खुद आकर ऑर्डर लें</span></div>
+      <div><strong>💳 Easy Payment</strong><span>UPI / Cash on Pickup</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">प्रेम केक हाउस</div>
+    <p>आपकी खुशी के हर मौके के लिए ❤️</p>
+    <p class="small">© 2026 Prem Cake House</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
