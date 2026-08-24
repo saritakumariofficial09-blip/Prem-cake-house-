@@ -17,3 +17,6 @@ a.light {background:#fff !important;color:#e50909 !important;}
   .cat b{font-size:18px}
   .cat small{font-size:12px}
 }
+
+.cat{position:relative;z-index:5;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.cat:active{transform:scale(.99)}
