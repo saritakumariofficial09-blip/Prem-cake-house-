@@ -6,19 +6,19 @@ const cakeProducts = [
   {name:"Chocolate Cake", hi:"चॉकलेट केक", photo:"chocolate.jpg", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
   {name:"Vanilla Cake", hi:"वनीला केक", photo:"vanilla.jpg", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
   {name:"Butterscotch Cake", hi:"बटरस्कॉच केक", photo:"butterscotch.jpg", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
-  {name:"White Forest Cake", hi:"व्हाइट फॉरेस्ट केक", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
-  {name:"Strawberry Cake", hi:"स्ट्रॉबेरी केक", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
-  {name:"Blueberry Cake", hi:"ब्लूबेरी केक", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}}
+  {name:"White Forest Cake", hi:"व्हाइट फॉरेस्ट केक", photo:"white-forest.jpg", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
+  {name:"Strawberry Cake", hi:"स्ट्रॉबेरी केक", photo:"strawberry.jpg", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}},
+  {name:"Blueberry Cake", hi:"ब्लूबेरी केक", photo:"blueberry.jpg", prices:{"½ Pound":150,"1 Pound":250,"2 Pound":500,"3 Pound":750,"5 Pound":1250,"7 Pound":1750}}
 ];
 
 const products = {
   cakes: cakeProducts,
   pastries: [{name:"Pastry",hi:"सभी प्रकार",price:20}],
-  cupcakes: [{name:"Cup Cake",hi:"सभी प्रकार",price:15}],
+  cupcakes: [{name:"Cup Cake",hi:"सभी प्रकार",price:15,photo:"cupcake.jpg"}],
   items: [
     {name:"Balloon",hi:"गुब्बारा",price:50},
     {name:"Birthday Cap",hi:"बर्थडे कैप",price:10},
-    {name:"Candle",hi:"मोमबत्ती",price:10},
+    {name:"Candle",hi:"मोमबत्ती",price:10,photo:"number-candle.jpg"},
     {name:"Cake Decoration Banner",hi:"केक डेकोरेशन बैनर",price:50},
     {name:"Fog / Spray",hi:"फॉग / स्प्रे",price:50}
   ]
@@ -46,7 +46,7 @@ function renderProducts(){
         <button class="btn add-btn" onclick="addCake(${i})">➕ ऑर्डर में जोड़ें</button>`;
     }else{
       card.innerHTML = `
-        <div class="product-photo" style="display:flex;align-items:center;justify-content:center;font-size:70px">${activeCategory==="pastries"?"🍰":activeCategory==="cupcakes"?"🧁":"🎈"}</div>
+        ${p.photo ? `<img class="product-photo" src="${p.photo}" alt="${p.name}">` : `<div class="product-photo product-emoji">${activeCategory==="pastries"?"🍰":activeCategory==="cupcakes"?"🧁":"🎈"}</div>`}
         <h3>${p.name}</h3><p>${p.hi} — ${money(p.price)}</p>
         <button class="btn add-btn" onclick="addSimple(${i})">➕ ऑर्डर में जोड़ें</button>`;
     }
